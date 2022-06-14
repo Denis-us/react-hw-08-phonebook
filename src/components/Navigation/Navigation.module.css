@@ -1,0 +1,30 @@
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    margin: 0px 100px 0px 100px 
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.authNav {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.userMenu {
+    display: flex;
+    align-items: center;
+}
+
+button.button {
+    height: 25px;
+    margin-left: 25px;
+}

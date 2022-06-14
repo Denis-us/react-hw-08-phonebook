@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 600px;
+  margin-left: 100px;
+  margin-top: 30px;
+  border: 1px solid black;
+  border-radius: 4px ;
+}
+
+.blockForm {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 25px 0px 25px 0px;
+
+}
+
+/* .label {
+  font-size: 25px;
+  margin-bottom: 10px;
+} */
+
+.textField {
+  width: 500px;
+  height: 30px;
+}
+
+/* .error {
+  text-align: center;
+  margin: 10px 20px 10px 20px;
+  color: red
+} */
+
+button.button {
+  width: 150px;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
