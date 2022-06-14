@@ -18,8 +18,7 @@ const Navigation = () => {
             <NavLink to="/contacts"
             className={setActive}>
                 Контакты
-            </NavLink>}  
-            
+            </NavLink>}     
         </ul>
     )
 }
