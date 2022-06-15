@@ -8,11 +8,11 @@ const initialState = {
 const contactsSlice = createSlice({
     name: 'contacts',
     initialState,
-    // reducers: {
-    //   removeContact(state, {payload}) {
-    //     state.contacts.filter(({id}) => id !== payload)
-    //   }
-    // },
+    reducers: {
+      removeContact(state, {payload}) {
+        state.contacts.filter(({id}) => id !== payload)
+      }
+    },
     extraReducers: {
         [contactsOperations.getContacts.fulfilled](state, {payload}) {
           state.contacts = payload
@@ -21,13 +21,13 @@ const contactsSlice = createSlice({
           state.contacts.push(payload)
       },
       [contactsOperations.deleteContact.fulfilled](state, {payload}) {
-        console.log(payload)
         state.contacts.filter(({id}) => id !== payload)
     },
     
     }
 })
 
+export const {removeContact, newContact} = contactsSlice.actions
 export default contactsSlice.reducer
 
 

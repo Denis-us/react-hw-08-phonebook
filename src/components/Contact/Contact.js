@@ -9,13 +9,6 @@ const Contact = ({id, name, number, onDeleteContact}) => {
 
     const dispatch = useDispatch()
 
-    // const delCont = dispatch(contactsOperations.deleteContact(id))
-
-  //   useEffect(() => {
-  //     // const delCont = dispatch(contactsOperations.deleteContact(id))
-  //     delCont(id)
-  // }, [delCont, dispatch, id])
-
     return (
         <div className={s.contact}>
           <div className={s.contactInfo}>

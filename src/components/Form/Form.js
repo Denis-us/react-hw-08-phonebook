@@ -1,10 +1,11 @@
-import { toast } from 'react-toastify';
-import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from 'react-redux';
-import { Button, TextField } from '@mui/material';
+import { toast } from 'react-toastify'
+import { useForm } from "react-hook-form"
+import { useDispatch, useSelector } from 'react-redux'
+import { Button, TextField } from '@mui/material'
+import {getContacts} from '../../redux/contacts/contactsSelectors'
+import contactsOperations from '../../redux/contacts/contactsOperations'
+import s from "./Form.module.css"
 
-import s from "./Form.module.css";
-import contactsOperations from '../../redux/contacts/contactsOperations';
 
 
 
@@ -12,20 +13,20 @@ import contactsOperations from '../../redux/contacts/contactsOperations';
 const Form = () => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const dispatch = useDispatch()
+  const contacts = useSelector(getContacts)
   
 
   const handleAddContact = async values => {
     try {
-      // if(contacts.find(contact => (contact.name === values.name))) {
-      //   return toast.error('Такой контакт уже есть')
-      // } else {
+      if(contacts.find(contact => (contact.name === values.name))) {
+        return toast.error('Такой контакт уже есть')
+      } else {
         await dispatch(contactsOperations.addContact(values))
         reset()
         toast.success('Контакт добавлен')
-      // }
+      }
     } catch (error) {
       toast.error('Ошибка при добавлении контакта')
-      console.log(error)
     }
   }
 

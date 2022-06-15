@@ -53,6 +53,7 @@ const getCurrentUser = createAsyncThunk('auth/refresh', async (_, {getState, rej
 
     try {
         const {data} = await axios.get('/users/current')
+        console.log(data)
         return data
     } catch (error) {
         rejectWithValue(error.message)

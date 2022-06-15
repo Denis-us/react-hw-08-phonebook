@@ -1,12 +1,10 @@
 import {useEffect} from 'react'
-import { useSelector, useDispatch } from "react-redux";
-import { toast } from 'react-toastify';
-import { Button } from '@mui/material';
+import { useSelector, useDispatch } from "react-redux"
 import {getContacts} from '../../redux/contacts/contactsSelectors'
 import {getFilter} from '../../redux/filter/filterSelectors'
 import contactsOperations from '../../redux/contacts/contactsOperations'
 import Contact from '../Contact'
-import s from "./ContactsList.module.css";
+import s from "./ContactsList.module.css"
 
 
 const ContactList = () => {
@@ -17,7 +15,7 @@ const ContactList = () => {
 
   useEffect(() => {
       dispatch(contactsOperations.getContacts())
-  }, [dispatch])
+  }, [dispatch, contacts])
 
   
 
@@ -37,28 +35,12 @@ const ContactList = () => {
       {filterContacts.map(({ id, name, number }) => (
         <li key={id} className={s.contactsElement}>
           <Contact id={id} name={name} number={number}/>
-          {/* <div className={s.contact}>
-          <div className={s.contactInfo}>
-            <p className={s.contactsData}>{name}</p>
-            <p className={s.contactsData}>{number}</p>
-          </div>
-           
-          <Button variant="contained" type="submit" className={s.button}
-              onClick={() => {
-                dispatch(contactsOperations.deleteContact(id))
-                toast.success('Контакт удален')
-              }}>
-                Удалить
-              </Button>
-              </div> */}
         </li>
       ))}
     </ul>
     )}
     </>
-    
-    
-  );
-};
+  )
+}
 
 export default ContactList

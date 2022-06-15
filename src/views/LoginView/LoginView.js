@@ -4,9 +4,6 @@ import { Button, TextField } from '@mui/material';
 import authOperations from '../../redux/auth/authOperations'
 import s from './LoginView.module.css'
 
-{/* <TextField id="outlined-basic" label="Имя" variant="outlined"/> */}
-{/* <Button variant="contained" type="submit" className={s.button}>Отправить</Button> */}
-
 // name:"denis"
 // email:"denisusus@mail.ru"
 // pass: 123123123
