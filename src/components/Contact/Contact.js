@@ -5,9 +5,16 @@ import { Button } from '@mui/material';
 import s from './Contact.module.css'
 import contactsOperations from '../../redux/contacts/contactsOperations';
 
-const Contact = ({id, name, number}) => {
+const Contact = ({id, name, number, onDeleteContact}) => {
 
     const dispatch = useDispatch()
+
+    // const delCont = dispatch(contactsOperations.deleteContact(id))
+
+  //   useEffect(() => {
+  //     // const delCont = dispatch(contactsOperations.deleteContact(id))
+  //     delCont(id)
+  // }, [delCont, dispatch, id])
 
     return (
         <div className={s.contact}>
@@ -17,10 +24,11 @@ const Contact = ({id, name, number}) => {
           </div>
            
           <Button variant="contained" type="submit" className={s.button}
-              onClick={() => {
-                dispatch(contactsOperations.deleteContact(id))
-                toast.success('Контакт удален')
-              }}>
+                  onClick={
+                    // () => delCont(id)
+                () => dispatch(contactsOperations.deleteContact(id))
+                // toast.success('Контакт удален')
+                  }>
                 Удалить
               </Button>
             {/* <button

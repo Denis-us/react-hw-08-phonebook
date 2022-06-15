@@ -2,6 +2,8 @@ import {useEffect} from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from 'react-toastify';
 import { Button } from '@mui/material';
+import {getContacts} from '../../redux/contacts/contactsSelectors'
+import {getFilter} from '../../redux/filter/filterSelectors'
 import contactsOperations from '../../redux/contacts/contactsOperations'
 import Contact from '../Contact'
 import s from "./ContactsList.module.css";
@@ -9,8 +11,8 @@ import s from "./ContactsList.module.css";
 
 const ContactList = () => {
   const dispatch = useDispatch()
-  const filter = useSelector(state => state.filter.filter)
-  const contacts = useSelector(state => state.contacts.contacts)
+  const filter = useSelector(getFilter)
+  const contacts = useSelector(getContacts)
 
 
   useEffect(() => {
@@ -34,8 +36,8 @@ const ContactList = () => {
       <ul className={s.contactsList}>
       {filterContacts.map(({ id, name, number }) => (
         <li key={id} className={s.contactsElement}>
-          {/* <Contact id={id} name={name} number={number}/> */}
-          <div className={s.contact}>
+          <Contact id={id} name={name} number={number}/>
+          {/* <div className={s.contact}>
           <div className={s.contactInfo}>
             <p className={s.contactsData}>{name}</p>
             <p className={s.contactsData}>{number}</p>
@@ -48,7 +50,7 @@ const ContactList = () => {
               }}>
                 Удалить
               </Button>
-              </div>
+              </div> */}
         </li>
       ))}
     </ul>
