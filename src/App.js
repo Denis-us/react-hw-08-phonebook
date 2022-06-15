@@ -1,6 +1,8 @@
 import { useEffect, lazy, Suspense} from 'react';
 import {Routes, Route} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import authOperations from './redux/auth/authOperations';
 import {getIsFetchingCurrentUser} from './redux/auth/authSelectors'
 import AppBar from './components/Navigation/AppBar'
@@ -76,6 +78,8 @@ useEffect(() => {
         />
       </Routes>
       </Suspense>
+
+      <ToastContainer/>
       </>
       )
       
