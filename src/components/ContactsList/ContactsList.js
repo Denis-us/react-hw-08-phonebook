@@ -1,5 +1,7 @@
 import {useEffect} from 'react'
 import { useSelector, useDispatch } from "react-redux";
+import { toast } from 'react-toastify';
+import { Button } from '@mui/material';
 import contactsOperations from '../../redux/contacts/contactsOperations'
 import Contact from '../Contact'
 import s from "./ContactsList.module.css";
@@ -15,6 +17,7 @@ const ContactList = () => {
       dispatch(contactsOperations.getContacts())
   }, [dispatch])
 
+  
 
   const filteredContacts = (contacts, filter) => {
     return contacts?.filter(contact => (
@@ -31,7 +34,21 @@ const ContactList = () => {
       <ul className={s.contactsList}>
       {filterContacts.map(({ id, name, number }) => (
         <li key={id} className={s.contactsElement}>
-          <Contact id={id} name={name} number={number}/>
+          {/* <Contact id={id} name={name} number={number}/> */}
+          <div className={s.contact}>
+          <div className={s.contactInfo}>
+            <p className={s.contactsData}>{name}</p>
+            <p className={s.contactsData}>{number}</p>
+          </div>
+           
+          <Button variant="contained" type="submit" className={s.button}
+              onClick={() => {
+                dispatch(contactsOperations.deleteContact(id))
+                toast.success('Контакт удален')
+              }}>
+                Удалить
+              </Button>
+              </div>
         </li>
       ))}
     </ul>

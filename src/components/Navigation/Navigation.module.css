@@ -25,6 +25,7 @@
 }
 
 button.button {
+    font-size: x-small;
     height: 25px;
     margin-left: 25px;
 }

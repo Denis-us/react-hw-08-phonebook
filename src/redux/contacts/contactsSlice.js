@@ -11,31 +11,14 @@ const contactsSlice = createSlice({
     extraReducers: {
         [contactsOperations.getContacts.fulfilled](state, {payload}) {
           state.contacts = payload
-            // state.token = payload.token
-            // state.isLoggedIn = true
         },
         [contactsOperations.addContact.fulfilled](state, {payload}) {
-          // state.contacts = state.contacts.push(payload)
           state.contacts.push(payload)
-          // state.token = payload.token
-          // state.isLoggedIn = true
       },
       [contactsOperations.deleteContact.fulfilled](state, {payload}) {
         console.log(payload)
         state.contacts.filter(({id}) => id !== payload)
-        // state.token = payload.token
-        // state.isLoggedIn = true
     },
-        // [contactsOperations.login.fulfilled](state, {payload}) {
-        //     state.user = payload.user
-        //     state.token = payload.token
-        //     state.isLoggedIn = true
-        // },
-        // [contactsOperations.logout.fulfilled](state, {payload}) {
-        //     state.user = {name: null, email: null}
-        //     state.token = null
-        //     state.isLoggedIn = false
-        // },
     }
 })
 
