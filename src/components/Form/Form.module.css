@@ -17,21 +17,16 @@
 
 }
 
-/* .label {
-  font-size: 25px;
-  margin-bottom: 10px;
-} */
-
 .textField {
   width: 500px;
   height: 30px;
 }
 
-/* .error {
+.error {
   text-align: center;
   margin: 10px 20px 10px 20px;
   color: red
-} */
+}
 
 button.button {
   width: 150px;

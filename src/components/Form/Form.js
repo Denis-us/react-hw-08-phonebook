@@ -7,9 +7,6 @@ import contactsOperations from '../../redux/contacts/contactsOperations'
 import s from "./Form.module.css"
 
 
-
-
-
 const Form = () => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const dispatch = useDispatch()
@@ -37,16 +34,8 @@ const Form = () => {
           required: true,
           pattern: /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
         })}/>
-
-        {/* <label className={s.label}>Имя</label>
-        <input className={s.input} {...register("name", {
-          required: true,
-          pattern: /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-        })} 
-          type = "text"
-          placeholder = "Введите имя"/> */}
           </div>
-      {/* {errors.name?.type === 'required' && <p className={s.error}>Имя может состоять только из букв, апострофа, тире и пробелов</p>} */}
+      {errors.name?.type === 'required' && <p className={s.error}>Имя может состоять только из букв, апострофа, тире и пробелов</p>}
         
 
         <div className={s.blockForm}>
@@ -54,21 +43,11 @@ const Form = () => {
         required: true,
         pattern: /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/
       })}/>
-        {/* <label className={s.label}>Телефон</label>
-      <input className={s.input} {...register("number", {
-        required: true,
-        pattern: /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/
-      })}
-        type = "tel"
-        placeholder = "Введите номер телефона" /> */}
         </div>
-      {/* {errors.number && <p className={s.error}>Номер телефона должен состоять из цифр, может содержать пробелы, тире, круглые скобки и может начинаться с +</p>} */}
+      {errors.number?.type && <p className={s.error}>Номер телефона должен состоять из цифр, может содержать пробелы, тире, круглые скобки и может начинаться с +</p>}
         
-      
-      {/* <button className={s.button} type="submit">Отправить</button> */}
       <Button variant="contained" type="submit" className={s.button}>Отправить</Button>
       </form>
-        
     )
   }
 

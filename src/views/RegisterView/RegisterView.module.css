@@ -21,25 +21,19 @@
   
   }
   
-  /* .label {
-    font-size: 25px;
-    margin-bottom: 10px;
-  } */
-  
   .textField {
     width: 500px;
     height: 30px;
     
   }
   
-  /* .error {
+  .error {
     text-align: center;
     margin: 10px 20px 10px 20px;
     color: red
-  } */
+  }
   
   button.button {
-    /* font-size: 20px; */
     width: 150px;
     height: 40px;
     margin-top: 30px;

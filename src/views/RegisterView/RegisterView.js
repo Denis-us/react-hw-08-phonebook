@@ -28,28 +28,24 @@ export default function Register () {
             <TextField id="outlined-basic" label="Имя" variant="outlined" className={s.textField}
                 {...register("name", { required: true })}
             />
-            {/* <label className={s.label}> Имя</label>
-                <input className={s.input} {...register("name", { required: true })}
-                /> */}
             </div>
+            {errors.name?.type && <p className={s.error}>Введите имя</p>}
+
             <div className={s.blockForm}>
             <TextField id="outlined-basic" label="Почта" variant="outlined" className={s.textField}
                 {...register("email", { required: true })}
             />
-            {/* <label className={s.label}> Почта</label>
-                <input className={s.input} {...register("email", { required: true })}
-                /> */}
             </div>
+            {errors.email?.type && <p className={s.error}>Введите почту</p>}
+
             <div className={s.blockForm}>
             <TextField id="outlined-basic" label="Пароль" variant="outlined" className={s.textField}
                 {...register("password", { required: true })}
             />
-            {/* <label className={s.label}> Пароль </label>
-                <input className={s.input} {...register("password", { required: true })}
-                /> */}
             </div>
+            {errors.password?.type && <p className={s.error}>Введите пароль</p>}
+
             <Button variant="contained" type="submit" className={s.button}>Отправить</Button>
-            {/* <button type="submit" className={s.btn}>Отправить</button> */}
         </form>
         </div>
     )
