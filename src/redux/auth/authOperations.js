@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {createAsyncThunk} from '@reduxjs/toolkit'
+import {toast} from 'react-toastify'
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com'
 
@@ -57,6 +58,8 @@ const getCurrentUser = createAsyncThunk('auth/refresh', async (_, {getState, rej
         return data
     } catch (error) {
         rejectWithValue(error.message)
+        token.unset();
+        toast.warn('Время авторизации истекло! Пожалуйста, повторите аутентификацию!');
     }
     
 })

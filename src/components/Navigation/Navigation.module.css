@@ -10,13 +10,14 @@
 .navigation {
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 200px;
 }
 
 .authNav {
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 200px;
+    
 }
 
 .userMenu {
@@ -24,8 +25,17 @@
     align-items: center;
 }
 
+.avatar {
+    margin-right: 20px;
+}
+
+.userText {
+    font-size: large;
+}
+
+
 button.button {
-    font-size: x-small;
-    height: 25px;
-    margin-left: 25px;
+    font-family: 'Dancing Script', cursive;
+    font-size: medium;
+    margin-left: 30px;
 }

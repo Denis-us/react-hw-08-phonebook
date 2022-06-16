@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 import {getIsLoggedIn} from '../../redux/auth/authSelectors'
 import s from './Navigation.module.css'
 
-const setActive = ({ isActive }) => isActive ? 'active-link' : ''
+const setActive = ({ isActive }) => isActive ? 'activeLink' : 'link'
 
 const Navigation = () => {
     const isLoggedIn = useSelector(getIsLoggedIn)
     return (
         <ul className={s.navigation}>
             <NavLink to="/"
-            className={setActive}>
+            className={setActive} >
                 Главная
             </NavLink>
 

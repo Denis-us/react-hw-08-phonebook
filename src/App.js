@@ -79,7 +79,7 @@ useEffect(() => {
       </Routes>
       </Suspense>
 
-      <ToastContainer/>
+      <ToastContainer autoClose={1000} position="top-center"/>
       </>
       )
       

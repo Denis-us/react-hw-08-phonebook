@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import s from './Navigation.module.css'
 
-const setActive = ({ isActive }) => isActive ? 'active-link' : ''
+const setActive = ({ isActive }) => isActive ? 'activeLink' : 'link'
 
 const AuthNav = () => {
     return (
