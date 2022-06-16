@@ -2,19 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 500px;
+  width: 460px;
+  padding: 0px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: rgba(163, 196, 224, 0.2);;
 }
 
-/* .contactInfo {
-  display: flex;
-} */
-
-.button {
+button.button {
   width: 100px;
   height: 40px;
-  margin-bottom: 25px;
 }
 
-.contactsData {
+.contactData {
   font-size: 20px;
 }

@@ -11,8 +11,8 @@ const Contact = ({id, name, number}) => {
     return (
         <div className={s.contact}>
           <div className={s.contactInfo}>
-            <p className={s.contactsData}>{name}</p>
-            <p className={s.contactsData}>{number}</p>
+            <p className={s.contactData}>{name}</p>
+            <p className={s.contactData}>{number}</p>
           </div>
            
           <Button variant="contained" type="submit" className={s.button}

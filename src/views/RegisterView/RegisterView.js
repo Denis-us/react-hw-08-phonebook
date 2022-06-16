@@ -25,21 +25,21 @@ export default function Register () {
         <h1>Регистрация</h1>
         <form className={s.form} onSubmit={handleSubmit(handleAddUser)}>
             <div className={s.blockForm}>
-            <TextField id="outlined-basic" label="Имя" variant="outlined" className={s.textField}
+            <TextField id="outlined-basic" label="Имя" variant="outlined" type="text" className={s.textField}
                 {...register("name", { required: true })}
             />
             </div>
             {errors.name?.type && <p className={s.error}>Введите имя</p>}
 
             <div className={s.blockForm}>
-            <TextField id="outlined-basic" label="Почта" variant="outlined" className={s.textField}
+            <TextField id="outlined-basic" label="Почта" variant="outlined" type="email" className={s.textField}
                 {...register("email", { required: true })}
             />
             </div>
             {errors.email?.type && <p className={s.error}>Введите почту</p>}
 
             <div className={s.blockForm}>
-            <TextField id="outlined-basic" label="Пароль" variant="outlined" className={s.textField}
+            <TextField id="outlined-basic" label="Пароль" variant="outlined" type="password" className={s.textField}
                 {...register("password", { required: true })}
             />
             </div>

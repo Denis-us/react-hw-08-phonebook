@@ -10,7 +10,7 @@
     flex-direction: column;
     width: 600px;
     background-color: rgba(163, 196, 224, 0.2);
-    border: 2px solid black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
   }
   

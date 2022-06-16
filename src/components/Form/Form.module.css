@@ -5,8 +5,8 @@
   width: 600px;
   margin-top: 30px;
   background-color: rgba(163, 196, 224, 0.2);
-  border: 2px solid black;
-  border-radius: 4px ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 .blockForm {

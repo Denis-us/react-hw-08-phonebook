@@ -23,13 +23,13 @@ export default function Login () {
         <h1 className={s.header}>Логин</h1>
         <form className={s.form} onSubmit={handleSubmit(handleLoginUser)}>
             <div className={s.blockForm}>
-            <TextField id="outlined-basic" label="Почта" variant="outlined" className={s.textField}
+            <TextField id="outlined-basic" label="Почта" variant="outlined" type="email" className={s.textField}
             {...register("email", { required: true })}/>
             </div>
             {errors.email?.type && <p className={s.error}>Введите почту</p>}
 
             <div className={s.blockForm}>
-            <TextField id="outlined-basic" label="Пароль" variant="outlined" className={s.textField}
+            <TextField id="outlined-basic" label="Пароль" variant="outlined" type="password" className={s.textField}
             {...register("password", { required: true })}/>
             </div>
             {errors.password?.type && <p className={s.error}>Введите пароль</p>}
